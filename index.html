@@ -1,21 +1,74 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Thank You!</title>
-        <style>
-		body{
-			background-color: rgb(102, 245, 255);
-			
-		}
-		h1{
-			backgroun-color: rgb(135, 135, 135);			
-			border: 2px groove black;
-			text-align: center;
-		}
-        </style>
-    </head>
-    <body>
-	    <h1 id = "title">Thank you for RSVPing!</h1>
+ <head>
+  <meta charset="utf-8" />
+  <title>Mad Libs</title>
+  <style>
+    body{
+    }
+
+    h1{
+      font-size: 50px;
+      text-align: center;
+    }
+     h1:hover{
+      text-align: center;
+      background-color: salmon;
+    }
+    input{
+      size: 2000px;
+    }
+    #inputs {
+      text-align: center;
+      font-family: cursive;
+      width: 100px;
+      background-color: salmon;
+      margin-left: 600px;
+    }
+    img {
+      margin-left: 500px;
+    }
+  </style>
+ </head>
+ <body> 
+    <h1 id = heading>Mad Libs</h1>
+    <img src = "https://www.glowwordbooks.com/wp-content/uploads/2012/11/pencil_jumble_sxc_1222890.jpg" alt = "Image of pencils">
+    <div id = "all-of-it">
+    <div id = "inputs">
+      <p>Job: <input type="text" id = "name1"></p>
+      <p>Noun: <input type="text" id="noun1"></p>
+      <p>Adjective: <input type="text" id="adjective1"></p>
+      <p>Noun: <input type="text" id="noun2"></p>
+      <p>Verb: <input type="text" id="verb1"></p>
+      <p>Adjective: <input type="text" id="adjective2"></p>
+      <p>Noun: <input type="text" id="noun3"></p>
+      <p>Verb: <input type="text" id="verb2"></p>
+      <p>Noun: <input type="text" id="noun4"></p>
+      <p>Verb: <input type="text" id="verb3"></p>
+      </div>
+      </div>     
+    <button id="lib-button">Lib it!</button>
+      
+    <p>Generated story: 
+    <span id="story"></span>
+    </p>
+    <script>
+        var libButton = document.getElementById('lib-button');
+        var libIt = function() {
+            var storyDiv = document.getElementById("story");
+            var noun1El = document.getElementById("noun1").value;
+            var adj1El = document.getElementById("adjective1").value;
+            var noun2El = document.getElementById("noun2").value;
+            var verb1El = document.getElementById("verb1").value;
+            var adj2El = document.getElementById("adjective2").value;
+            var noun3El = document.getElementById("noun3").value;
+            var verb2El = document.getElementById("verb2").value;
+            var noun4El = document.getElementById("noun4").value;
+            var verb3El = document.getElementById("verb3").value;
+            var name1El = document.getElementById("name1").value;
+            storyDiv.innerHTML = "Today a " + name1El + " named " + noun4El + " came to our school to talk to us about her job. She said the most important skill you need to know to do her job is to be able to " + verb2El + " around a " + adj1El + " " + noun3El + ". She said it was easy for her to learn her job because she loved to " + verb1El + " when she was my age--and that helps a lot! If you're considering her profession, I hope you can be near a " + adj2El + " " + noun1El + ". That's very important! If you get too distracted in that situation you won't be able to " + verb3El + " next to a "+ noun2El + "!";
+        };
+        libButton.addEventListener('click', libIt);
+</script>
 </body>
-	</html>
+</html>
